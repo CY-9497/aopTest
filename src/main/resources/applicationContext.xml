@@ -16,7 +16,9 @@
     <aop:config>
 <!--        声明切面-->
         <aop:aspect ref="myAspect">
-            <aop:before method="before" pointcut="execution(* com.ch.aop.Target.*(..))"/>
+<!--            <aop:before method="before" pointcut="execution(* com.ch.aop.Target.*(..))"/>-->
+            <aop:pointcut id="myPointcut" expression="execution(* com.ch.aop.Target.*(..))"/>
+            <aop:before method="before" pointcut-ref="myPointcut"/>
         </aop:aspect>
     </aop:config>
 
