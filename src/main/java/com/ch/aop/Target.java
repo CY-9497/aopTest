@@ -1,5 +1,8 @@
 package com.ch.aop;
 
+import org.springframework.stereotype.Component;
+
+@Component("target")
 public class Target implements TargetInterface{
     @Override
     public void save() {
