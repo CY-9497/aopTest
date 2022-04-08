@@ -5,7 +5,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-@Transactional
+/**
+ * @author 青梅君
+ */
+@Transactional(rollbackFor = Exception.class)
 @Service("userService")
 public class UserServiceImpl implements UserService{
 
@@ -13,7 +16,8 @@ public class UserServiceImpl implements UserService{
     private UserDao userDao;
 
 
-    @Transactional
+    @Override
+    @Transactional(rollbackFor = RuntimeException.class)
     public void transfer(String username1,String username2, Double m) {
         userDao.transferOut(username1,m);
 //        int i = 1/0;

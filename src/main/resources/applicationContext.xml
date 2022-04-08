@@ -36,6 +36,7 @@
 
 <!--    加载外部properties文件-->
     <contxt:property-placeholder location="jdbc.properties"/>
+    <contxt:property-placeholder location="log4j.properties"/>
 
 <!--    配置数据源-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
