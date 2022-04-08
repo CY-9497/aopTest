@@ -62,15 +62,19 @@
     </bean>
 
 <!--    通知  事物的增强-->
-    <tx:advice id="txAdvice" transaction-manager="transactionManager">
-        <tx:attributes>
-            <tx:method name="*"/>
-        </tx:attributes>
-    </tx:advice>
+<!--    <tx:advice id="txAdvice" transaction-manager="transactionManager">-->
+<!--        <tx:attributes>-->
+<!--            <tx:method name="*"/>-->
+<!--        </tx:attributes>-->
+<!--    </tx:advice>-->
 
 <!--    配置织入-->
-    <aop:config>
-        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.ch.service.UserServiceImpl.transfer(..))"/>
-    </aop:config>
+<!--    <aop:config>-->
+
+<!--        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.ch.service.UserServiceImpl.transfer(..))"/>-->
+<!--    </aop:config>-->
+
+<!--事务的注解驱动-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
 </beans>
